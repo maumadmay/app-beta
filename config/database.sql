@@ -1,0 +1,14 @@
+CREATE TABLE users (
+    id bigint PRIMARY KEY UNIQUE NOT NULL, 
+    firstname varchar(50) NOT NULL, 
+    lastname varchar(50) NOT NULL,
+    email varchar(100) NOT NULL UNIQUE, 
+    pasword text NOT NULL, 
+    mobile_phone varchar(20) NOT NULL UNIQUE, 
+    address varchar(100) NULL, 
+    gender integer NULL, 
+    birthdate date NULL, status boolean NOT NULL DEFAULT TRUE, 
+    created_at timestamp with time zone NOT NULL DEFAULT NOW(), 
+    updated_at timestamp with time zone NOT NULL DEFAULT NOW(), 
+    deleted_at timestamp with time zone NULL
+    );
