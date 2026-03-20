@@ -39,14 +39,15 @@
     }
 
     //connection de suppabase
+    /*
     $supa_conn = pg_connect($supa_data_connection);
     if(!$supa_conn){
-        echo "Error: Unable to connect to supa database...";
+        echo "<br>Error: Unable to connect to supa database...</br>";
         exit();
     }else{
         echo "<br>Supabase satisfactory connecction...</br>";
     }
-    
+    /*
     /*
     echo "<font size = 40 <b>Hola, bienvenido </b> </font>";
     $num1 = 10;
