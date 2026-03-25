@@ -46,8 +46,7 @@
         exit();
     }else{
         echo "<br>Supabase satisfactory connecction...</br>";
-    }
-    /*
+    }*/
     /*
     echo "<font size = 40 <b>Hola, bienvenido </b> </font>";
     $num1 = 10;

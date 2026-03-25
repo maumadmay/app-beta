@@ -10,9 +10,12 @@
     $phone  = $_POST['mphone'];
     $pswd   = $_POST['passwd']; 
 
+    //encriptar
+    $enc_pass = md5($pswd);
+
     //query to insert into sql
     $sql = "INSERT INTO users (firstname, lastname, email, mobile_phone, pasword) 
-    VALUES ('$f_name', '$l_name', '$mail', '$phone', '$pswd')";
+    VALUES ('$f_name', '$l_name', '$mail', '$phone', '$enc_pass')";
 
     //execute query
     pg_query($sql);

@@ -1,5 +1,5 @@
 CREATE TABLE users (
-    id bigint PRIMARY KEY UNIQUE NOT NULL, 
+    id serial PRIMARY KEY UNIQUE NOT NULL, 
     firstname varchar(50) NOT NULL, 
     lastname varchar(50) NOT NULL,
     email varchar(100) NOT NULL UNIQUE, 
@@ -12,4 +12,4 @@ CREATE TABLE users (
     created_at timestamp with time zone NOT NULL DEFAULT NOW(), 
     updated_at timestamp with time zone NOT NULL DEFAULT NOW(), 
     deleted_at timestamp with time zone NULL
-    );
+);
