@@ -1,38 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register user</title>
-    <link rel="icon" type="image/png" href="icons/home.png">
-</head>
+    <link rel="icon" type="image/png" href="icons/home.png" />
+  </head>
 
-<body bgcolor="#90b083">
-        <form name = "frm-user" action = "signup.php" method = "post">
-            <table border="1" align="center">
-            <label for="fname">Fist name</label> <br>
-            <input type="text" name = "fname" required> <br>
+  <center>
+    <body bgcolor="#90b083">
+      <form name="frm-user" action="signup.php" method="post">
+        <table border="1" align="center">
+          <label for="fname">First name</label>
+          <br />
+          <input type="text" name="fname" required />
+          <br />
 
-            <label for="lname">Last name</label> <br>
-            <input type="text" name = "lname" required> <br>
+          <label for="lname">Last name</label>
+          <br />
+          <input type="text" name="lname" required />
+          <br />
 
-            <label for="email">Email</label> <br>
-            <input type="email" name = "email" required> <br>
+          <label for="email">Email</label>
+          <br />
+          <input type="email" name="email" required />
+          <br />
 
-            <label for="pswd">Password</label> <br>
-            <input type="password" name = "passwd" required> <br>
+          <label for="pswd">Password</label>
+          <br />
+          <input type="password" name="passwd" required />
+          <br />
 
-            <label for="pswd">Password again</label> <br>
-            <input type="password"> <br>
+          <label for="pswd">Password again</label>
+          <br />
+          <input type="password" />
+          <br />
 
-            <label for="mphone">Mobile phone</label> <br>
-            <input type="number" name = "mphone" required> <br> <br>
+          <label for="mphone">Mobile phone</label>
+          <br />
+          <input
+            type="number"
+            min="3000000000"
+            max="3520000000"
+            name="mphone"
+            required
+          />
+          <br />
+          <br />
 
-            <button>Register</button>
+          <button>Register</button>
         </table>
-
-        </form>
-</body>
-
+      </form>
+    </body>
+  </center>
 </html>
