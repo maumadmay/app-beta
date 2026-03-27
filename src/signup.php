@@ -11,8 +11,8 @@
     $pswd   = $_POST['passwd']; 
 
     //encriptar
-    $enc_pass = md5($pswd);
-
+    //$enc_pass = md5($pswd);
+    $enc_pass = password_hash($pswd, PASSWORD_BCRYPT);
     //query to insert into sql
     $sql = "INSERT INTO users (firstname, lastname, email, mobile_phone, pasword) 
     VALUES ('$f_name', '$l_name', '$mail', '$phone', '$enc_pass')";
@@ -27,17 +27,20 @@
     }
 
     //telefono 
-    $check_phone = "SELECT mobile_phone FROM users_model WHERE mobile_phone = '$phone'";
+    $check_phone = "SELECT mobile_phone FROM users WHERE mobile_phone = '$phone'";
     $res_phone = pg_query($local_conn, $check_phone);
 
     if (pg_num_rows($res_phone) > 0) {
         echo "Error: El número de celular '$phone' ya está registrado en nuestro sistema."; 
         exit();
     }
-
+    
+    //rama2
+    $res_local = pg_query($local_conn, $sql); 
     if ($res_local) {
     $res_supa = pg_query($supa_conn, $sql);
-
+    
+    //rama 3
     if ($res_supa) {
         echo "¡Listo! Guardado en ambos lados.";
     } else {
@@ -47,6 +50,5 @@
     echo "Error: No se pudo guardar ni en local ni en supa";
     }
 
-    $res_local = pg_query($local_conn, $sql); 
     //pg_query($sql);
 ?>
