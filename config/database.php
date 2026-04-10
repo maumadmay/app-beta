@@ -29,22 +29,22 @@
         port     = $SUPA_PORT
     ";
 
-    //coneccion de local
+    //local coneccion
     $local_conn = pg_connect($local_data_connection);
     if(!$local_conn){
-        echo "Error: Unable to connect to local database...";
+        echo "<br>Error: Unable to connect to local database...";
         exit();
     }else{
-        echo "Local satisfactory connecction...";
+        //echo "<br>Local satisfactory connecction...";
     }
 
-    //connection de suppabase
+    //suppabase connection 
     $supa_conn = pg_connect($supa_data_connection);
     if(!$supa_conn){
-        echo "<br>Error: Unable to connect to supa database...</br>";
+        echo "<br>Error: Unable to connect to supa database...";
         exit();
     }else{
-        echo "<br>Supabase satisfactory connecction...</br>";
+        //echo "<br>Supabase satisfactory connecction...";
     }
     /*
     echo "<font size = 40 <b>Hola, bienvenido </b> </font>";

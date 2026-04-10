@@ -13,3 +13,16 @@ CREATE TABLE users (
     updated_at timestamp with time zone NOT NULL DEFAULT NOW(), 
     deleted_at timestamp with time zone NULL
 );
+
+select * from users;
+SELECT 
+	u.firstname||''||u.lastname as fullname,
+	u.email,
+	u.mobile_phone,
+	case 
+		when u.status = true then 'Active' else 'Inactive' end as status,
+	u.profile_photo
+from users u;
+
+alter table users add column profile_photo text;
+update users set profile_photo='profile_photos/user_def.png';
