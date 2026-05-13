@@ -42,7 +42,9 @@
     
     //rama 3
     if ($res_supa) {
-        echo "¡Listo! Guardado en ambos lados.";
+        //echo "¡Listo! Guardado en ambos lados.";
+        echo "<script>alert('¡Listo! Usuario registrado!.')</script>";
+        header('refresh:0;url=signin.html');
     } else {
         echo "Error: Se guardó en local pero no en la nube.";
     }
